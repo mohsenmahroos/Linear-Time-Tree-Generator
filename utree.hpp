@@ -4,10 +4,11 @@
 #include<vector>
 
 template<class random_t>
-struct undirected_tree: std::vector<std::pair<size_t,size_t> > {
+class undirected_tree: public std::vector<std::pair<size_t,size_t> > {
     struct uniform_int: std::uniform_int_distribution<size_t> {
         uniform_int(size_t min, size_t max) :
             std::uniform_int_distribution<size_t>(min,max) {} };
+ public:
     undirected_tree(random_t& random, size_t size) {
         std::vector<size_t> node(size);
         uniform_int random_bit(0,1);
