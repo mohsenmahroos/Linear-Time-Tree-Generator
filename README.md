@@ -1,6 +1,6 @@
 # Linear-Time-Tree-Generator
 
-The header file utree.hpp includes a c++20 class undirected_tree. 
+The header file utree.hpp includes a c++20 template<class pseudo_random_number_generator_t> class undirected_tree.
 
 The class constructor two parameters:
 
