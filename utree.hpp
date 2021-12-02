@@ -10,7 +10,7 @@ class undirected_tree: public std::vector<std::pair<size_t,size_t> > {
         uniform_int(size_t min, size_t max) :
             std::uniform_int_distribution<size_t>(min,max) {} };
 public:
-    undirected_tree(size_t size, pseudo_random_number_generator_t& random) {
+    undirected_tree(size_t size, pseudo_random_number_generator_t& random, bool unordered_edges = true) {
         if (size == 0)
             throw std::domain_error("\n undirected_tree size must be a positive number");
         std::vector<size_t> node(size);
@@ -19,7 +19,11 @@ public:
         std::shuffle(node.begin(),node.end(),random);
         for (size_t E = size-1, l = 1; l < size; ++l) {
             const size_t p = random_bit(random), q = 1-p;
-            emplace_back(node[l-p],node[l-q]);
+            const size_t u = node[l-p], v = node[l-q];
+            if (unordered_edges)
+                emplace_back(u,v);
+            else
+                emplace_back(std::min(u,v),std::max(u,v));
             if (l < E) {
                 const size_t i = uniform_int(0,l)(random);
                 if  (i < l)
