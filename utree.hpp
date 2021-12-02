@@ -17,8 +17,8 @@ public:
         uniform_int random_bit(0,1);
         std::iota(node.begin(),node.end(),1);
         std::shuffle(node.begin(),node.end(),random);
-        for (size_t l = 1, m = size-1; l < size; ++l) {
-            size_t u = node[l-1], v = node[l];
+        for (size_t k = 0, l = 1, m = size-1, r = 2; l < size; k = l, l = r++) {
+            size_t u = node[k], v = node[l];
             if (unordered_edges) {
                 if (random_bit(random))
                     std::swap(u,v);
@@ -27,8 +27,8 @@ public:
                 emplace_back(std::min(u,v),std::max(u,v));
             if (l < m) {
                 const size_t i = uniform_int(0,l)(random);
-                if  (i < l)
+                if (i < l)
                     std::swap(node[i],node[l]);
-                const size_t r = l+1, j = uniform_int(r,m)(random);
+                const size_t j = uniform_int(r,m)(random);
                 if (j > r)
                     std::swap(node[r],node[j]); } } } };
