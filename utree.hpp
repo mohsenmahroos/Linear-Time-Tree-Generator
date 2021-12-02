@@ -18,10 +18,11 @@ public:
         std::iota(node.begin(),node.end(),1);
         std::shuffle(node.begin(),node.end(),random);
         for (size_t E = size-1, l = 1; l < size; ++l) {
-            const size_t p = random_bit(random), q = 1-p;
-            const size_t u = node[l-p], v = node[l-q];
-            if (unordered_edges)
-                emplace_back(u,v);
+            size_t u = node[l-1], v = node[l];
+            if (unordered_edges) {
+                if (random_bit(random))
+                    std::swap(u,v);
+                emplace_back(u,v); }
             else
                 emplace_back(std::min(u,v),std::max(u,v));
             if (l < E) {
