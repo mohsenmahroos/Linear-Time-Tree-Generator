@@ -4,16 +4,15 @@
 #include<vector>
 #include<exception>
 
-class undirected_tree: public std::vector< std::pair<size_t,size_t> > {
+template<class pseudo_random_number_generator_t>
+class undirected_tree: public std::vector<std::pair<size_t,size_t> > {
     struct uniform_int: std::uniform_int_distribution<size_t> {
         uniform_int(size_t min, size_t max) :
             std::uniform_int_distribution<size_t>(min,max) {} };
 public:
-    undirected_tree(size_t size) {
+    undirected_tree(size_t size, pseudo_random_number_generator_t& random) {
         if (size == 0)
             throw std::domain_error("\n undirected_tree size must be a positive number");
-        std::random_device device;
-        std::mt19937_64 random(device());
         std::vector<size_t> node(size);
         uniform_int random_bit(0,1);
         std::iota(node.begin(),node.end(),1);
