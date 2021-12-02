@@ -9,7 +9,7 @@ class undirected_tree: public std::vector<std::pair<size_t,size_t> > {
         uniform_int(size_t min, size_t max) :
             std::uniform_int_distribution<size_t>(min,max) {} };
  public:
-    undirected_tree(random_t& random, size_t size) {
+    undirected_tree(size_t size, random_t& random) {
         std::vector<size_t> node(size);
         uniform_int random_bit(0,1);
         std::iota(node.begin(),node.end(),1);
