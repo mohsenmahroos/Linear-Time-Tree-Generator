@@ -4,7 +4,7 @@
 #include<vector>
 #include<exception>
 
-class undirected_tree: public std::vector<std::pair<size_t,size_t> > {
+class undirected_tree: public std::vector< std::pair<size_t,size_t> > {
     struct uniform_int: std::uniform_int_distribution<size_t> {
         uniform_int(size_t min, size_t max) :
             std::uniform_int_distribution<size_t>(min,max) {} };
