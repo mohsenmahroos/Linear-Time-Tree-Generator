@@ -10,7 +10,7 @@ The class constructor three parameters:
 
 2. pseudo_random_number_generator& random: that passed to the constructor reference to the PRNG used to generate the tree. 
 
-3. bool unordered_edges = true: an optional oparameter that can be used to specify that node numbers u and v can be ordered such that u < v.
+3. bool unordered_edges = true: an optional oparameter that can be used to specify that u and v can be ordered such that u < v.
 
 The generated tree is stored in the class object as a vector of (size-1) pairs of nodes that represent edges of the tree. 
   
