@@ -9,7 +9,7 @@ The class constructor three parameters:
 
 The cycle-free tree consists of (size) distinct nodes laballed 1..size, and (size-1) distinct undirected edges (u,v) between differnt nodes u and v, such that there exists a single path between any two nodes in the tree. 
 
-3. bool unordered_edges = true: an optional oparameter used to specify that node numbers u and v can be ordered such that u < v.
+3. bool unordered_edges = true: an optional oparameter that can be used to specify that node numbers u and v can be ordered such that u < v.
 
 The generated tree is stored in the class object as a vector of (size-1) pairs of nodes that represent edges of the tree. 
   
