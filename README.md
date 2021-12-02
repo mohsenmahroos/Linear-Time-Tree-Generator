@@ -12,7 +12,7 @@ The class constructor three parameters:
 
 2. pseudo_random_number_generator& random: that passed to the constructor reference to the PRNG used to generate the tree. 
 
-3. bool unordered_edges = true: an optional oparameter that can be used to specify that u and v are ordered such that u < v.
+3. bool unordered_edges = true: an optional oparameter that can be used to specify that (u,v) is ordered such that u < v.
   
 Example:
   
