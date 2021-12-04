@@ -2,7 +2,7 @@
 
 The header file utree.hpp includes a c++20 template\<class pseudo_random_number_generator_t\> class undirected_tree.
 
-The cycle-free tree consists of (size) distinct nodes laballed 1..size, and (size-1) distinct undirected edges (u,v) between differnt nodes u and v, such that there exists a single path between any two nodes in the tree. 
+The cycle-free tree consists of (size) distinct nodes laballed 1 .. size, and (size-1) distinct undirected edges (u,v) between differnt nodes u and v, such that there exists a single path between any two nodes in the tree. 
 
 The generated tree is stored in the class object as a public base vector of (size-1) pairs of nodes that represent edges of the tree. 
 
