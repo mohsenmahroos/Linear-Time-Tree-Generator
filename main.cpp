@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-    std::random_device device;
-    std::mt19937_64 random(device());
+    random_device device;
+    mt19937_64 random(device());
     size_t N;
     cin >> N;
     for (auto [u,v]: undirected_tree(N,random))
